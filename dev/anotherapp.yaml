@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anotherapp
+spec:
+  selector:
+    matchLabels:
+      app: anotherapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: anotherapp
+    spec:
+      containers:
+      - name: anotherapp
+        image: njanmelbin/argocdwavesexample:1.0
+        ports:
+        - containerPort: 8080
+
